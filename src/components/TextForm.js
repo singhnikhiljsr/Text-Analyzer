@@ -31,6 +31,7 @@ export default function TexthtmlForm(props) {
     const convertCopy = () =>{
         let textCopy = document.getElementById('myBox')
         textCopy.select()
+        document.getSelection().removeAllRanges()
         navigator.clipboard.writeText(textCopy.value)
         setAlert("Text Copied!")
         setTimeout(() => {
@@ -80,12 +81,12 @@ export default function TexthtmlForm(props) {
           rows="10"
         ></textarea>
       </div>
-      <button className="btn btn-primary mx-2" onClick={convertUp}>Convert to UpperCase</button>
-      <button className="btn btn-primary mx-2" onClick={convertLo}>Convert to LowerCase</button>
-      <button className="btn btn-primary mx-2" onClick={convertRev}>Reverse the text</button>
-      <button className="btn btn-primary mx-2" onClick={convertCopy}>Copy Text</button>
-      <button className="btn btn-primary mx-2" onClick={convertRemoveWhiteSpaces}>Remove Extra Spaces</button>
-      <button className="btn btn-primary mx-2" onClick={convertClear}>Clear Text</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={convertUp}>Convert to UpperCase</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={convertLo}>Convert to LowerCase</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={convertRev}>Reverse the text</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={convertCopy}>Copy Text</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={convertRemoveWhiteSpaces}>Remove Extra Spaces</button>
+      <button disabled={text.length===0} className="btn btn-primary mx-2 my-2" onClick={convertClear}>Clear Text</button>
     </div>
     <div className="container my-3">
       <h2>Text Summary</h2>
