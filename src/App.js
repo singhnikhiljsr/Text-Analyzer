@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       {/* <Navbar title="Text Explorer" about="About" /> */}
-      <Navbar title="Text Explorer" />
+      <Navbar title="Text Analyzer" />
       <TextForm heading="Enter the text to analyze"/>
       {/* <About heading="About Us"/> */}
     </>
