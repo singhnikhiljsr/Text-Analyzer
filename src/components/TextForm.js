@@ -29,10 +29,7 @@ export default function TexthtmlForm(props) {
     }
 
     const convertCopy = () =>{
-        let textCopy = document.getElementById('myBox')
-        textCopy.select()
-        document.getSelection().removeAllRanges()
-        navigator.clipboard.writeText(textCopy.value)
+        navigator.clipboard.writeText(text)
         setAlert("Text Copied!")
         setTimeout(() => {
           setAlert(null)
@@ -91,7 +88,7 @@ export default function TexthtmlForm(props) {
     <div className="container my-3">
       <h2>Text Summary</h2>
     
-      {text.split(' ').filter((element)=>{return element.length!==0}).length} Words and {text.length} Characters
+      {text.split(/\s+/).filter((element)=>{return element.length!==0}).length} Words and {text.length} Characters
     </div>
     </>
   );
